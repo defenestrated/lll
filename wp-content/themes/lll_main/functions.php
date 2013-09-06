@@ -6,18 +6,18 @@ add_action( 'init', 'create_post_types' );
 
 function create_post_types() {
 
-	register_post_type( 'bio',
+	register_post_type( 'biography',
 		array(
 			'labels' => array(
-				'name' => __( 'Bios' ),
-				'singular_name' => __( 'Bio' ),
-				'add_new_item' => _x('Add New Bio', 'bio'),
-				'edit_item' => _x('Edit Bio', 'bio'),
+				'name' => __( 'Biographies' ),
+				'singular_name' => __( 'Biography' ),
+				'add_new_item' => _x('Add New Biography', 'biography'),
+				'edit_item' => _x('Edit Biography', 'biography'),
 			),
 			'public' => true,
 			'hierarchical' => true,
 			'has_archive' => true,
-			'rewrite' => array('slug' => 'bios'),
+			'rewrite' => array('slug' => 'biographies'),
 			'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 			'menu_position' => 5
 		)
@@ -55,7 +55,7 @@ add_action( 'init', 'spawn_taxonomies' );
 function spawn_taxonomies() {
 	register_taxonomy(
 		'roles',
-		'bio',
+		'biography',
 		array(
 			'label' => __( 'Title / Roles' ),
 			'rewrite' => array( 'slug' => 'roles' )
@@ -66,4 +66,13 @@ function spawn_taxonomies() {
 
 /* --------------------------------------------------------- */
 
+
+/* -----------------      copyright      ------------------- */
+
+
+function get_copyright() {
+	echo "<div class='copyright'>copyright goes here</div>";
+}
+
+/* --------------------------------------------------------- */
 ?>

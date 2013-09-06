@@ -14,3 +14,34 @@ Written in the summer of 2013
 
 
 
+table.nav td{
+	border-left: 1px solid #000;
+	border-right: 1px solid #000;
+}
+
+table.nav td.current {
+	background: red;
+}
+
+/* !-------- bios -------- */
+
+.bio {
+	margin: 50px;
+	overflow: auto;
+}
+
+.bio img {
+	float: left;
+	margin-right: 50px;
+}
+
+
+.ftdpost {
+	margin: 50px;
+	overflow: auto;
+}
+
+.ftdpost img {
+	float: left;
+	margin-right: 50px;
+}

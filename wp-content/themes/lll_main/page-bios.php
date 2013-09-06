@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: News
+Template Name: bios
 */
 /*
 
@@ -16,54 +16,52 @@ get_header(); ?>
 <?php the_post(); ?>
 
 	<div id="pagetitle">
-	<?php the_title(); ?>
+	<?php 
+		the_title();
+		echo " // ";
+		echo get_post_meta(get_the_ID(), 'ft', true); 
+	?>
 	</div>
 	
 	<div id="primary">
 		<div class="bodytext" id="content" role="main">
-			<div id="guts">
-			
-			<?php the_post(); ?>
-				<?php
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-					$args= array(
-						'category_name' => 'news', // Change these category SLUGS to suit your use.
-						'paged' => $paged
-					);
-					query_posts($args);
-					if( have_posts() ) :?>
+			<?php
+				$args= array(
+					'post_type' => 'biography',
+					'count' => -1
+				);
+				$bioquery = new WP_Query($args);
+				if( $bioquery -> have_posts() ) :
+				while ( $bioquery -> have_posts() ) : $bioquery -> the_post();
+			?>
+				<div class="bio">
+					<?php echo the_post_thumbnail("medium", array('class' => 'biopic')); ?>
+					<h1><?php echo the_title(); ?></h1>
 					
-					<?php while ( have_posts() ) : the_post(); ?>
-					<div id="singlepost"> 
 					<h2>
-					<?php the_title(); ?>
+					<?php 
+						$targs = array(
+							'fields' => 'names'
+						);
+						
+						$terms = wp_get_object_terms(get_the_ID(), 'roles', $targs);
+						$count = 0;
+						foreach ($terms as $term) {
+							$count ++;
+							echo $term;
+							if ($count < count($terms)) echo ", ";
+						}
+					?>
 					</h2>
 					
-					<h3>
-					<?php
-					echo('posted on ');
-					echo get_the_date( 'F jS, Y' );
-					?>
-					</h3>
-					<?php the_excerpt(); ?>
-					<a href="<?php echo get_permalink(); ?>"> Read the full article...</a>
-					</div> <!-- singlepost -->
-					
-					
-					
-					<?php endwhile; ?>
-					
-					<?php else : ?>
-					<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'twentyeleven' ); ?></h1>
-					</header><!-- .entry-header -->
-					
-					<div class="entry-content">
-					<p><?php _e( 'No posts here - sorry!' ); ?></p>
-					</div> <!-- entry-content -->
-					<?php endif; ?>
-			</div> <!-- #guts -->
+					<?php echo the_content(); ?>
+				</div>
+				
+			<?php
+				endwhile;
+				endif;
+				wp_reset_postdata();
+			?>
 		</div><!-- #content -->
 	</div><!-- #primary -->
 <?php get_footer(); ?>

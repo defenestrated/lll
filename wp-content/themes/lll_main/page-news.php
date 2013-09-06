@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: ftd
+Template Name: news
 */
 /*
 
@@ -30,15 +30,15 @@ get_header(); ?>
 				the_content();
 				
 				$args= array(
-					'post_type' => 'ftd',
+					'post_type' => 'post',
 					'count' => -1
 				);
-				$ftdquery = new WP_Query($args);
-				if( $ftdquery -> have_posts() ) :
-				while ( $ftdquery -> have_posts() ) : $ftdquery -> the_post();
+				$newsquery = new WP_Query($args);
+				if( $newsquery -> have_posts() ) :
+				while ( $newsquery -> have_posts() ) : $newsquery -> the_post();
 			?>
-				<div class="ftdpost">
-					<?php echo the_post_thumbnail("medium", array('class' => 'ftdpic')); ?>
+				<div class="newspost">
+					<?php echo the_post_thumbnail("medium", array('class' => 'newspic')); ?>
 					<h1><?php echo the_title(); ?></h1>
 					
 					<h2>
