@@ -12,36 +12,314 @@ Written in the summer of 2013
 
 */
 
+/* !-------- big stuff -------- */
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 200;
+	src: url("/lll/assets/fonts/Gotham-Light.otf");
+}
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 200;
+	font-style: italic;
+	src: url("/lll/assets/fonts/Gotham-LightItalic.otf");
+}
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 400;
+	src: url("/lll/assets/fonts/Gotham-Book.otf");
+}
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 400;
+	font-style: italic;
+	src: url("/lll/assets/fonts/Gotham-BookItalic.otf");
+}
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 600;
+	src: url("/lll/assets/fonts/Gotham-Medium.otf");
+}
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 600;
+	font-style: italic;
+	src: url("/lll/assets/fonts/Gotham-MediumItalic.otf");
+}
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 800;
+	src: url("/lll/assets/fonts/Gotham-Bold.otf");
+}
+
+@font-face {
+	font-family: Gotham;
+	font-weight: 800;
+	font-style: italic;
+	src: url("/lll/assets/fonts/Gotham-BoldItalic.otf");
+}
 
 
-table.nav td{
-	border-left: 1px solid #000;
-	border-right: 1px solid #000;
+html {
+	background: url("/lll/assets/images/background_main.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	margin: 0px !important;
+	width: 100%;
+	height: 100%;
+}
+
+p {
+	-webkit-margin-before: 	0px;
+	-webkit-margin-after:	0px;
+	-webkit-margin-start: 	0px;
+	-webkit-margin-end: 	0px;
+}
+
+/*
+h1 {
+	-webkit-margin-before: 	0px;
+	-webkit-margin-after: 	0px;
+	-webkit-margin-start: 	0px;
+	-webkit-margin-end: 	0px;
+}
+*/
+
+#content {
+	width: 100%;
+	height: 100%;
+	left:0;
+	position: absolute;
+	font: normal 200 14px/4em "Gotham", "Verdana", sans-serif;
+	color: white;
+}
+
+table {
+	border-collapse: collapse !important;
+	border-spacing: 0px !important;
+	border: 0px rgba(0,0,0,0) !important;
+}
+
+.copyright {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	font: normal 200 9px/3em "Gotham", "Verdana", sans-serif;
+	letter-spacing: 0.25em;
+	color: rgba(255,255,255,0.4);
+	text-align: center;
+}
+
+.copyright a {
+	color: rgba(255,255,255,0.4);
+	font-style: italic;
+	text-decoration: none;
+	
+	-webkit-transition:	all		.2s ease-in-out;  
+   	-moz-transition:	all		.2s ease-in-out;  
+   	-o-transition:		all		.2s ease-in-out;  
+   	transition:			all		.2s ease-in-out;
+}
+
+.copyright a:hover {
+	text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+	color: rgba(255,255,255,1.0);
+}
+
+/* ---------------------------- */
+
+/* !----------- nav ----------- */
+
+table.nav {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background: rgba(0,0,0,0.4);
+/* 	background: rgba(50,50,70,0.6); */
+	z-index: 9999;
+	
+	font: normal 600 14px/1.2em "Gotham", "Verdana", sans-serif;
+	text-align: center;
+	vertical-align: middle;
+	table-layout: fixed;
+}
+
+table.nav td a {
+	display: block;
+	height: 100%;
+	padding: 1.5em 0;
+}
+
+table.nav td, table.nav td a{
+	width: auto;
+	cursor: pointer;
+
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 0.3em;
+	
+	text-shadow: 0px 0px 40px rgba(0,0,0,0.9);
+	
+	-webkit-transition:	background-color	.2s ease-in-out;  
+   	-moz-transition:	background-color 	.2s ease-in-out;  
+   	-o-transition:		background-color 	.2s ease-in-out;  
+   	transition:			background-color 	.2s ease-in-out;
+}
+
+table.nav td:hover {
+	background: rgba(0,0,0,0.1);
 }
 
 table.nav td.current {
-	background: red;
+	background: rgba(0,0,0,0.2);
 }
 
-/* !-------- bios -------- */
+/* ---------------------------- */
 
-.bio {
-	margin: 50px;
+
+
+/* !--------- splash ---------- */
+
+#logo {
+	position: absolute;
+	bottom: 175px;
+	left: 100px;
+	font: normal 200 90px/1.1em "Gotham", "Verdana", sans-serif;
+	color: white;
+}
+
+/* ---------------------------- */
+
+
+
+/* !------ page, general ------ */
+
+table.pagetable {
+	width: 100%;
+	height: 100%;
+}
+
+td.pagetitle {
+	width: 33%;
+	padding: 0 50px 0 20px;
+	vertical-align: top;
+	font-size: 60px;
+	line-height: 1.2em;
+}
+
+.titlebox {
+}
+
+.titlebox p {
+	margin: 0px;
+	padding: 0px;
+}
+
+td.pagecontent {
+	vertical-align: top;
+	padding-top: 50px;
+}
+
+td.pagecontent h1 {
+	font: normal 200 36px "Gotham", "Verdana", sans-serif;
+	letter-spacing: 0.07em;
+	margin: 0 0 10px 0;
+}
+
+td.pagecontent h1:not(:first-child) {
+	margin-top: 50px;
+}
+
+td.pagecontent p {
+	max-width: 700px;
+	
+	font: normal 200 13px/1.3em "Gotham", "Verdana", sans-serif;
+	letter-spacing: 0.1em;
+	
+	-webkit-margin-after: 1em;
+}
+
+td.pagecontent a {
+	color: white;
+	text-decoration: none;
+	font-style: italic;
+}
+
+td.pagecontent a:hover {
+	font-weight: 400;
+	text-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+}
+
+/* ---------------------------- */
+
+
+
+/* !------- bios + ftd -------- */
+
+.bio, .ftdpost {
+	margin: 50px 0;
 	overflow: auto;
 }
 
-.bio img {
+.bio h1 {
+	margin-top: 0px !important;
+}
+
+.bio h2, .ftdpost h2 {
+	font: normal 600 11px "Gotham", "Verdana", sans-serif;
+	letter-spacing: .3em;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+.bio img, .ftdpost img {
 	float: left;
-	margin-right: 50px;
+	margin: 0 2em 2em 0;
 }
 
+/* !-------- gallery --------- */
 
-.ftdpost {
-	margin: 50px;
-	overflow: auto;
+.gallery {
+	max-width: 800px;
+	margin: 0 !important;
+	padding: 20px !important;
 }
 
-.ftdpost img {
-	float: left;
-	margin-right: 50px;
+.gallery img {
+	border: 1px solid white !important;
+	
+	-webkit-transition:	all		.2s ease-in-out;  
+   	-moz-transition:	all		.2s ease-in-out;  
+   	-o-transition:		all		.2s ease-in-out;  
+   	transition:			all		.2s ease-in-out;
+   	margin-bottom: 5px;
 }
+
+.gallery img:hover {
+	box-shadow: 0px 0px 20px white;
+}
+
+.gallery p.gallery-caption {
+	width: 150px;
+	text-align: left;
+	font: normal 200 11px/1.2em "Gotham", "Verdana", sans-serif;
+	letter-spacing: .1em;
+}
+

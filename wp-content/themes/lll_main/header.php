@@ -14,27 +14,9 @@
 	<?php bloginfo('name'); ?>
 	<?php wp_title('&nbsp;&bull;&nbsp;', true, 'left'); ?>
 	</title>
-
-	<?php
-	$bgstring = "background";
-	$randval = rand(1, 7);
-	$bgstring .= $randval;
-	$bgstring .= ".jpg";
-	?>
 	
 	<style type="text/css" media="screen">
 		@import url( <?php echo get_stylesheet_uri(); ?> );
-		
-		
-		<?php echo 
-		'body { background: url(/bgimages/' . $bgstring . ') no-repeat fixed center;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		}
-		'; ?>
-		
 	</style>
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
@@ -50,7 +32,7 @@
 	<table class="nav">
 		<tbody><tr>
 	 	<?php 
-			$parents = get_pages('parent=0&sort_column=menu_order');
+			$parents = get_pages('exclude=21&parent=0&sort_column=menu_order');
 			$parentcount = count($parents);
 			$counter = 0;
 	 	?>

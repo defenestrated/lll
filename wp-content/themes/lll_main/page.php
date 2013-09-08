@@ -16,28 +16,16 @@ get_header(); ?>
 
 <?php the_post(); ?>
 
-	<div id="pagetitle">
-	<?php 
-		the_title();
-		echo " // ";
-		echo get_post_meta(get_the_ID(), 'ft', true); 
-	?>
-	</div>
-	
-	<div id="primary">
-		<div class="bodytext" id="content" role="main">
-			<div id="guts">
-			
-			</br></br>
-			
-			<?php the_content(); ?>
 
-			<?php get_template_part( 'content', 'page' ); ?>
-			
-			
-			</div> <!-- #guts -->
-		</div><!-- #content -->
-	</div><!-- #primary -->
+<div id="content" role="main">
+
+<table class="pagetable"><tbody><tr>
+<td class="pagetitle"><div class="titlebox"><p><?php echo get_post_meta(get_the_ID(), 'ft', true); ?></p></div></td>
+<td class="pagecontent"><?php the_content(); ?></td>
+</tr></tbody></table>
+
+</div>
+	
 <?php get_footer(); ?>
 
 
