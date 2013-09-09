@@ -18,7 +18,7 @@ get_header(); ?>
 <div id="content" role="main">
 
 <table class="pagetable"><tbody><tr>
-<td class="pagetitle"><div class="titlebox"><p><?php echo get_post_meta(get_the_ID(), 'ft', true); ?></p></div></td>
+<td class="pagetitle"><div class="titlebox"><h1><?php echo get_post_meta(get_the_ID(), 'ft', true); ?></h1></div></td>
 <td class="pagecontent">
 	<?php
 		the_content();

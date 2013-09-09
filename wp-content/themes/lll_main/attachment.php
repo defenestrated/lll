@@ -12,63 +12,28 @@
  * @since Twenty Eleven 1.0
  */
 
-get_header(); ?>
+get_header(); 
+the_post(); ?>
 
-		<div id="primary">
-			<div id="content" role="main">
-				<?php
-				$args= array('category_name' => 'quotes', 'orderby' => 'rand', 'posts_per_page' => 1);
-				query_posts($args);
-				if( have_posts() ) :?>
-				<?php while ( have_posts() ) : the_post(); ?>
-				
-				
-				
-				
-				<div id="insideybox">
-				
-				<?php 
-				echo '"';
-				echo get_the_title(); 
-				echo '"</br>&nbsp;&nbsp;- ';
-				echo get_the_content();
-				?>
-				
-				</div> <!-- #insideybox -->
-				
-				<?php endwhile; endif; ?>
-				<?php wp_reset_query(); ?>
+<div id="content" class="attachcontent" role="main">
 
-				<?php the_post(); ?>
-				
-				<h1>
-				<?php the_title(); ?>
-				</h1>
-				</br></br>
-				
-				
-				<div id="attachimg">
-				<?php echo wp_get_attachment_image( $post->ID, 'large' ); ?>
-				
-				</br>
-				</br>
-				
-				<?php echo get_the_excerpt(); ?>
-				
-				</br>
-				</br>
-				<hr style="height:1px;border-width:0;color:#000;background-color:#000;margin-bottom:-2px;" />
-				</br>
-				
-				<?php 
-				previous_image_link( false, '&laquo; previous photo' );
-				echo ' || ';
-				next_image_link( false, 'next photo &raquo;' ); 
-				?>
-				
-				</div>
-				
-			</div><!-- #content -->
-			<?php get_footer(); ?>
-		</div><!-- #primary -->
+	<table class="pagetable attachtable"><tbody><tr>
+	<td class="pagetitle">
+		<div class="attbox">
+			<div class="attstuff">
+				<h1><?php echo the_title(); ?></h1>
+				<p><?php echo get_the_excerpt(); ?></p>
+				<div class="attnav">
+					<p class="prev aleft"><?php previous_image_link( false, '<span class="arrow aleft">&lsaquo;</span> previous photo' ); ?></p>
+					<p class="next aright"><?php next_image_link( false, 'next photo <span class="arrow aright">&rsaquo;</span>' ); ?></p>
+				</div> <!-- .attnav -->
+			</div> <!-- .attstuff -->
+		</div> <!-- .attbox -->
+	</td>
+	<?php $img = wp_get_attachment_image_src( $post->ID, 'full' ); ?>
+	<td class="pagecontent attachcell"><img class="attimg" src="<?php echo $img[0] ?>"></img></td>
+	</tr></tbody></table>	
+		
+</div><!-- #content -->
+<?php get_footer(); ?>
 

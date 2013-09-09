@@ -24,7 +24,18 @@ var newh = 0;
 	if ($(".titlebox").length) {
 		$(".titlebox").css({
 			"height" : $(window).height() - $("table.nav").outerHeight() + "px",
-			"padding-top" : (($(window).height() - $("table.nav").outerHeight())/2 - $(".titlebox p").outerHeight()/2) + "px"
+			"padding-top" : (($(window).height() - $("table.nav").outerHeight())/2 - $(".titlebox h1").outerHeight()/2) + "px"
+		});
+	}
+	
+	if ($(".attbox").length) {
+		$(".attbox").css({
+			"height" : $(window).height() - $("table.nav").outerHeight() + "px",
+			"padding-top" : (($(window).height() - $("table.nav").outerHeight())/2 - ($(".attstuff").outerHeight() + $(".attnav p").outerHeight())/2) + "px"
+		});
+		
+		$("td.pagecontent").css({
+			"height" : $(window).height() - $("table.nav").outerHeight() + "px"
 		});
 	}
 }
