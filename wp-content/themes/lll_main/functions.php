@@ -163,7 +163,6 @@ if ( apply_filters( 'use_default_gallery_style', true ) )
         #{$selector} .gallery-item {
             float: {$float};
             margin-top: 10px;
-            text-align: center;
             width: {$itemwidth}%;
         }
         #{$selector} img {
@@ -171,6 +170,7 @@ if ( apply_filters( 'use_default_gallery_style', true ) )
         }
         #{$selector} .gallery-caption {
             margin-left: 0;
+            margin-top: 5px;
         }
     </style>
     <!-- see gallery_shortcode() in wp-includes/media.php -->";
@@ -212,7 +212,7 @@ return $output;
 
 
 function get_copyright() {
-	echo "<div class='copyright'>all material &copy; Alternate Image Productions, design &copy; <a href='http://www.samgalison.com/' target='_blank'>Sam Galison</a>.</div>";
+	echo "<div class='copyright'>all material &copy; Other Noises, design &copy; <a href='http://www.samgalison.com/' target='_blank'>Sam Galison</a>.</div>";
 }
 
 /* --------------------------------------------------------- */

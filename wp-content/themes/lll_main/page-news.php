@@ -30,19 +30,24 @@ get_header(); ?>
 		while ( $newsquery -> have_posts() ) : $newsquery -> the_post();
 	?>
 	
-	<div class="ftdpost">
-		<?php echo the_post_thumbnail("medium", array('class' => 'newspic')); ?>
-		<h1><?php echo the_title(); ?></h1>
-		
-		<h2>
-		<?php
-			echo get_the_date('F jS, Y');
-		?>
-		</h2>
-		
-		<?php echo the_content(); ?>
-	</div>
-		
+	<div class="newslink">
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+			<div class="ftdpost">
+				<?php echo the_post_thumbnail("medium", array('class' => 'newspic')); ?>
+				<h1><?php the_title(); ?></h1>
+				
+				<h2>
+				<?php
+					echo get_the_date('F jS, Y');
+				?>
+				</h2>
+				
+				<?php echo the_excerpt(); ?>
+				<a style="padding-left:20px" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">read more...</a>
+			</div>
+		</a>
+	</div>		
+	
 	<?php
 		endwhile;
 		endif;

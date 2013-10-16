@@ -121,12 +121,12 @@ table {
 	bottom: 0;
 	font: normal 200 9px/3em "Gotham", "Verdana", sans-serif;
 	letter-spacing: 0.25em;
-	color: rgba(255,255,255,0.4);
+	color: rgba(255,255,255,0.6);
 	text-align: center;
 }
 
 .copyright a {
-	color: rgba(255,255,255,0.4);
+	color: rgba(255,255,255,0.6);
 	font-style: italic;
 	text-decoration: none;
 	
@@ -145,25 +145,32 @@ table {
 
 /* !----------- nav ----------- */
 
-table.nav {
+#navbar {
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	background: rgba(0,0,0,0.4);
-/* 	background: rgba(50,50,70,0.6); */
+	text-align: center;
+	background: rgba(0,0,0,0.6);
 	z-index: 9999;
+/* 	overflow: auto; */
+}
+
+table.nav {
+/* 	background: rgba(50,50,70,0.6); */
 	
 	font: normal 600 14px/1.2em "Gotham", "Verdana", sans-serif;
 	text-align: center;
 	vertical-align: middle;
-	table-layout: fixed;
+	margin: 0 auto;
+	
+/* 	table-layout: fixed; */
 }
 
 table.nav td a {
 	display: block;
 	height: 100%;
-	padding: 1.5em 0;
+	padding: 1.5em 20px;
 }
 
 table.nav td, table.nav td a{
@@ -184,11 +191,11 @@ table.nav td, table.nav td a{
 }
 
 table.nav td:hover {
-	background: rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.3);
 }
 
 table.nav td.current {
-	background: rgba(0,0,0,0.2);
+	background: rgba(0,0,0,0.4);
 }
 
 /* ---------------------------- */
@@ -217,8 +224,9 @@ table.pagetable {
 }
 
 td.pagetitle {
-	width: 33%;
-	padding: 0 50px 0 20px;
+	width: 20%;
+	
+	padding: 0 80px 0 50px;
 	vertical-align: top;
 }
 
@@ -226,14 +234,18 @@ td.pagetitle {
 }
 
 .titlebox h1 {
-	font: normal 200 60px/1.2em "Gotham", "Verdana", sans-serif;
+	font: normal 200 48px/1.2em "Gotham", "Verdana", sans-serif;
 	margin: 0px;
 	padding: 0px;
 }
 
 td.pagecontent {
 	vertical-align: top;
-	padding-top: 50px;
+	padding: 50px 50px 0px 75px;
+}
+
+.pagecontent h1, .pagecontent p, .pagecontent h2 {
+	padding-left: 20px;
 }
 
 td.pagecontent h1 {
@@ -247,8 +259,7 @@ td.pagecontent h1:not(:first-child) {
 }
 
 td.pagecontent p {
-	max-width: 700px;
-	
+	max-width: 600px;
 	font: normal 200 13px/1.3em "Gotham", "Verdana", sans-serif;
 	letter-spacing: 0.1em;
 	
@@ -270,6 +281,23 @@ td.pagecontent a:hover {
 
 
 
+
+/* !-------    news    -------- */
+
+.newslink {
+	max-width: 800px;
+}
+
+.newslink:hover {
+	background: rgba(0,0,0,0.4);
+}
+
+/* ---------------------------- */
+
+
+
+
+
 /* !------- bios + ftd -------- */
 
 .bio, .ftdpost {
@@ -285,12 +313,12 @@ td.pagecontent a:hover {
 	font: normal 600 11px "Gotham", "Verdana", sans-serif;
 	letter-spacing: .3em;
 	text-transform: uppercase;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 }
 
 .bio img, .ftdpost img {
 	float: left;
-	margin: 0 2em 2em 0;
+	margin: 0 2em 1em 20px;
 }
 
 /* !-------- gallery --------- */
@@ -308,7 +336,7 @@ td.pagecontent a:hover {
    	-moz-transition:	all		.2s ease-in-out;  
    	-o-transition:		all		.2s ease-in-out;  
    	transition:			all		.2s ease-in-out;
-   	margin-bottom: 5px;
+   	margin: 0px 5px 0px 0px;
 }
 
 .gallery img:hover {
@@ -320,6 +348,7 @@ td.pagecontent a:hover {
 	text-align: left;
 	font: normal 200 11px/1.2em "Gotham", "Verdana", sans-serif;
 	letter-spacing: .1em;
+	padding: 0px;
 }
 
 

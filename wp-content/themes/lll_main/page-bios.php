@@ -25,6 +25,7 @@ get_header(); ?>
 		$args= array(
 			'post_type' => 'biography',
 			'count' => -1,
+			'orderby' => 'menu_order',
 			'order' => 'ASC'
 		);
 		$bioquery = new WP_Query($args);
@@ -33,7 +34,7 @@ get_header(); ?>
 	?>
 	
 	<div class="bio">
-		<?php echo the_post_thumbnail("medium", array('class' => 'biopic')); ?>
+		<?php echo the_post_thumbnail(array(200,200), array('class' => 'biopic')); ?>
 		<h1><?php echo the_title(); ?></h1>
 		<h2>
 			<?php 

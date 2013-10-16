@@ -1,39 +1,26 @@
+<!-- this is the post template -->
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package WordPress
- * @subpackage Twenty_Eleven
- * @since Twenty Eleven 1.0
+ * The template for displaying all posts.
  */
 
 get_header(); ?>
 
 <?php the_post(); ?>
 
-	<div id="primary-single">
-		<div class="bodytext" id="content" role="main">
-			<div id="guts">
-			
-			<h1>
-			<?php the_title(); ?>
-			</h1>
-			
-			</br></br>
-			
-			<?php the_content(); ?>
 
-			<?php get_template_part( 'content', 'page' ); ?>
-			
-			
-			</div> <!-- #guts -->
-		</div><!-- #content -->
-	</div><!-- #primary -->
+<div id="content" role="main">
+
+<table class="pagetable"><tbody><tr>
+<td class="pagetitle"><div class="titlebox"><h1><?php the_title(); ?></h1></div></td>
+<td class="pagecontent">
+	<?php the_content(); ?>
+	<a href="news">go back to the news page</a>
+</td>
+</tr></tbody></table>
+
+</div>
+	
 <?php get_footer(); ?>
 
 

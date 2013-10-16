@@ -32,7 +32,7 @@
 	<table class="nav">
 		<tbody><tr>
 	 	<?php 
-			$parents = get_pages('exclude=21&parent=0&sort_column=menu_order');
+			$parents = get_pages('parent=0&sort_column=menu_order');
 			$parentcount = count($parents);
 			$counter = 0;
 	 	?>
